@@ -1,0 +1,26 @@
+<!DOCTYPE hml>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			Tutorial de juego
+		</title>
+		<script src="src/phaser.min.js" ></script>
+		<script src="src/Boot.js" ></script>
+		<script src="src/Preloader.js" ></script>
+		<script src="src/MainMenu.js" ></script>
+		<script src="src/Game.js" ></script>
+	</head>
+	<body>
+		<script>
+			(function (){
+				var game = new Phaser.Game(320, 480, Phaser.CANVAS, 'game');
+				game.state.add('Boot', Ball.Boot);
+				game.state.add('Preloader', Ball.Preloader);
+				game.state.add('MainMenu', Ball.MainMenu);
+				game.state.add('Game', Ball.Game);
+				game.state.start('Boot');
+			})();
+		</script>
+	</body>
+</html>
